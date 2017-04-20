@@ -46,8 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraFollowCar.cs" />
-     <Compile Include="Assets\Car2DControllerScript.cs" />
+     <Compile Include="Assets\Scripts\BarScript.cs" />
+     <Compile Include="Assets\Scripts\CameraFollowCar.cs" />
+     <Compile Include="Assets\Scripts\Car2DControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Stat.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
