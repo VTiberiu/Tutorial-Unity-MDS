@@ -37,7 +37,7 @@ public class Car2DControllerScript : MonoBehaviour {
         cu cât e driftFactoru mai mare, cu atât forța e mai mare*/
         
         //stânga + dreapta
-        carRigidBody.AddTorque(turnFactor * Input.GetAxis("Steering") * torqueForce);
+        carRigidBody.AddTorque(-turnFactor * Input.GetAxis("Steering") * torqueForce);
 
         //oprirea rotației când mașina stă pe loc
         carRigidBody.angularVelocity = carRigidBody.velocity.magnitude < 0.5 ? 0 : carRigidBody.angularVelocity;
