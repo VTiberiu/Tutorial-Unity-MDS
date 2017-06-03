@@ -23,19 +23,19 @@ public class Car2DControllerScript : MonoBehaviour {
         și vectorul cu direcția velocității este 0 când aceștia sunt perpendiculari (mașina driftează la 90 de grade)
         sau 1 când sunt paraleli (mașina merge înainte fără să drifteze); scad rezultatul final din 1 ca să obțin
         driftFactor*/
-        
+
         //0 - mașina stă pe loc, 1 - virajul are randament maxim
         float turnFactor = Math.Min(carRigidBody.velocity.magnitude / speedForce, 1);
-        
+
         //înainte + înapoi
         carRigidBody.AddForce(Input.GetAxis("Throttle") * speedForce * transform.up);
         //aplică forță pozitivă pe direcția pe care o înfruntă mașina
-        
+
         //reducerea vitezei în caz de drift
         carRigidBody.AddForce((-driftFactor) * (speedForce / 2) * carRigidBody.velocity.normalized);
         /*aplică forță negativă pe direcția velocității, NU pe direcția pe care o înfruntă mașina;
         cu cât e driftFactoru mai mare, cu atât forța e mai mare*/
-        
+
         //stânga + dreapta
         carRigidBody.AddTorque(-turnFactor * Input.GetAxis("Steering") * torqueForce);
 
@@ -43,6 +43,6 @@ public class Car2DControllerScript : MonoBehaviour {
         carRigidBody.angularVelocity = carRigidBody.velocity.magnitude < 0.5 ? 0 : carRigidBody.angularVelocity;
         //când viteza mașinii scade sub o constantă oarecare (se alege să fie cât mai realist) viteza unghiulară e setată la 0
 
-        Debug.Log(carRigidBody.velocity.magnitude);
+        //Debug.Log(carRigidBody.velocity.magnitude);           
     }
 }
