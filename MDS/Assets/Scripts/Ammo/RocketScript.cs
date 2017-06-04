@@ -17,7 +17,7 @@ public class RocketScript : MonoBehaviour {
 	void Start () {
         this.gameObject.transform.position = sourceWeapon.position;
         this.gameObject.transform.rotation = sourceWeapon.rotation;
-        this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+        this.gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0);
 
         SpriteRenderer sr = this.gameObject.AddComponent<SpriteRenderer>();
         sr.sprite = sprite;
@@ -25,7 +25,8 @@ public class RocketScript : MonoBehaviour {
 
         Rigidbody2D rb = this.gameObject.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0;
-        rb.AddForce(sourceWeapon.parent.GetComponent<Rigidbody2D>().velocity * 50);
+        rb.AddForce(40 * sourceWeapon.parent.GetComponent<Rigidbody2D>().velocity);
+        sourceWeapon.parent.GetComponent<Rigidbody2D>().AddForce((-250 * new Vector2(sourceWeapon.up.x, sourceWeapon.up.y)));
 
         BoxCollider2D bc = this.gameObject.AddComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(sourceWeapon.parent.GetComponent<BoxCollider2D>(), bc);
@@ -35,6 +36,6 @@ public class RocketScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        this.GetComponent<Rigidbody2D>().AddForce(transform.up * 20);
+        this.GetComponent<Rigidbody2D>().AddForce(20 * transform.up);
     }
 }
