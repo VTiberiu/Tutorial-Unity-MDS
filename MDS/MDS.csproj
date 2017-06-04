@@ -75,10 +75,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Ammo\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\Ammo\LaserScript.cs" />
+    <Compile Include="Assets\Scripts\Ammo\RocketScript.cs" />
     <Compile Include="Assets\Scripts\BarScript.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\CameraFollowCar.cs" />
     <Compile Include="Assets\Scripts\Car2DControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Explosions\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\GunShootScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
   </ItemGroup>

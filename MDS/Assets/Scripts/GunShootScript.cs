@@ -17,4 +17,5 @@ public class GunShootScript : MonoBehaviour {
             rs.sprite = sprite;
         }
     }
+
 }

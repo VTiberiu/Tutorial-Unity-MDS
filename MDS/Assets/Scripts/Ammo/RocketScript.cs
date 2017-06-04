@@ -32,10 +32,19 @@ public class RocketScript : MonoBehaviour {
         Physics2D.IgnoreCollision(sourceWeapon.parent.GetComponent<BoxCollider2D>(), bc);
 
         Destroy(this.gameObject, 10f);
+
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         this.GetComponent<Rigidbody2D>().AddForce(20 * transform.up);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "EnemyCar")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
