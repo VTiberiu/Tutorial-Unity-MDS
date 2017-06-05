@@ -11,6 +11,7 @@ using UnityEngine;
 public class RocketScript : MonoBehaviour {
 
     public Transform sourceWeapon;
+    public GameObject RocketExplosionGO;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +35,14 @@ public class RocketScript : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D col) {
+        PlayExplosion();
         Destroy(this.gameObject);
         Debug.Log("Racheta a colidat cu " + col.gameObject);
+    }
+
+    void PlayExplosion()
+    {
+        GameObject explosion = (GameObject)Instantiate(RocketExplosionGO);
+        explosion.transform.position = transform.position;
     }
 }
