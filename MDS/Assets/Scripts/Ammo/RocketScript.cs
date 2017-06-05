@@ -3,30 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 /**
  * Își crește gradual viteza din momentul tragerii
- * Explodează la impact
+ * Explodează la impact (cu damage, opțional)
  * IGNORĂ IMPACTUL CU PLAYERUL CARE A TRAS
  * Are un lifespan de 10 secunde
  * Enemy tracking(opțional)
  */
 public class RocketScript : MonoBehaviour {
 
-    public Transform sourceWeapon;
     public GameObject RocketExplosionGO;
 
 	// Use this for initialization
 	void Start () {
-        this.gameObject.transform.position = sourceWeapon.position;
-        this.gameObject.transform.rotation = sourceWeapon.rotation;
-        this.gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0);
-
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
-        rb.AddForce(40 * sourceWeapon.parent.GetComponent<Rigidbody2D>().velocity);
-        sourceWeapon.parent.GetComponent<Rigidbody2D>().AddForce((-250 * new Vector2(sourceWeapon.up.x, sourceWeapon.up.y)));
+        rb.AddForce(40 * this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
+        this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().AddForce((-200 * new Vector2(this.gameObject.transform.parent.up.x, this.gameObject.transform.parent.up.y)));
 
         BoxCollider2D bc = this.gameObject.GetComponent<BoxCollider2D>();
-        Physics2D.IgnoreCollision(sourceWeapon.parent.GetComponent<BoxCollider2D>(), bc);
-
-        Destroy(this.gameObject, 10f);
+        Physics2D.IgnoreCollision(this.gameObject.transform.parent.parent.GetComponent<BoxCollider2D>(), bc);
     }
 	
 	// Update is called once per frame
@@ -37,12 +30,12 @@ public class RocketScript : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col) {
         PlayExplosion();
         Destroy(this.gameObject);
-        Debug.Log("Racheta a colidat cu " + col.gameObject);
     }
 
     void PlayExplosion()
     {
-        GameObject explosion = (GameObject)Instantiate(RocketExplosionGO);
-        explosion.transform.position = transform.position;
+        Debug.Log(this.gameObject.transform);
+        GameObject explosion = Instantiate(RocketExplosionGO);
+        explosion.transform.position = this.transform.position;
     }
 }

@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257959089018992}
   m_LocalRotation: {x: 0, y: 0, z: -0.00032573167, w: 0.99999994}
-  m_LocalPosition: {x: 0.0075083673, y: 58.13896, z: -0.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 4.78, y: 10.42}
+  m_Size: {x: 3, y: 7}
 --- !u!114 &114875375293206950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,7 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a7219684f512c4fbaab73a382af30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceWeapon: {fileID: 0}
+  RocketExplosionGO: {fileID: 1489183394914076, guid: f9d2dbd581ad4fd4fa6c6440e88da871,
+    type: 2}
 --- !u!212 &212510561183777528
 SpriteRenderer:
   m_ObjectHideFlags: 1

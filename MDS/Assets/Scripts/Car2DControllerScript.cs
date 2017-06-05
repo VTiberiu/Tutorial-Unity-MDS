@@ -26,6 +26,8 @@ public class Car2DControllerScript : MonoBehaviour {
 
         //0 - mașina stă pe loc, 1 - virajul are randament maxim
         float turnFactor = Math.Min(carRigidBody.velocity.magnitude / speedForce, 1);
+        //inversează direcția virajului când dă cu spatele
+        turnFactor = Math.Sign(Vector3.Dot(carRigidBody.velocity.normalized, carRigidBody.transform.up)) * Math.Abs(turnFactor);
 
         //înainte + înapoi
         carRigidBody.AddForce(Input.GetAxis("Throttle") * speedForce * transform.up);
@@ -38,7 +40,7 @@ public class Car2DControllerScript : MonoBehaviour {
 
         //stânga + dreapta
         carRigidBody.AddTorque(-turnFactor * Input.GetAxis("Steering") * torqueForce);
-
+        
         //oprirea rotației când mașina stă pe loc
         carRigidBody.angularVelocity = carRigidBody.velocity.magnitude < 0.5 ? 0 : carRigidBody.angularVelocity;
         //când viteza mașinii scade sub o constantă oarecare (se alege să fie cât mai realist) viteza unghiulară e setată la 0
