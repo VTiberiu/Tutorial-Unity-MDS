@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceWeapon: {fileID: 0}
+  RocketExplosionGO: {fileID: 1489183394914076, guid: f9d2dbd581ad4fd4fa6c6440e88da871,
+    type: 2}
 --- !u!212 &212510561183777528
 SpriteRenderer:
   m_ObjectHideFlags: 1
