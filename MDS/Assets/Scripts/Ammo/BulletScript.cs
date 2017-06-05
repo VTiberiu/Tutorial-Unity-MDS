@@ -21,15 +21,15 @@ public class BulletScript : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        this.gameObject.transform.Translate(3 * Vector3.up);
+        this.gameObject.transform.Translate(0.6f * Vector3.up);
         if (currentTurretTurn == Turret.LEFT)
-            this.gameObject.transform.Translate(-1 * Vector3.right);
+            this.gameObject.transform.Translate(-0.2f * Vector3.right);
         else
-            this.gameObject.transform.Translate(1 * Vector3.right);
+            this.gameObject.transform.Translate(0.2f * Vector3.right);
         changeTurrentTurn();
 
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
-        rb.AddForce(50 * (Vector2) this.gameObject.transform.parent.parent.transform.up + this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
+        rb.AddForce(5 * (Vector2) this.gameObject.transform.parent.parent.transform.up + 0.1f * this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
 
         BoxCollider2D bc = this.gameObject.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(this.gameObject.transform.parent.parent.GetComponent<BoxCollider2D>(), bc);
@@ -47,7 +47,7 @@ public class BulletScript : MonoBehaviour {
     void PlayExplosion() {
         GameObject explosion = Instantiate(RocketExplosionGO);
         explosion.transform.position = this.transform.position;
-        explosion.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+        explosion.transform.localScale = new Vector3(0.2f, 0.2f, 0);
     }
 
     private void changeTurrentTurn() {

@@ -10,14 +10,14 @@ using UnityEngine;
  */
 public class LaserScript : MonoBehaviour {
 
-    public GameObject RocketExplosionGO;
+    public GameObject LaserExplosionGO;
 
     // Use this for initialization
     void Start() {
-        this.gameObject.transform.Translate(2 * Vector3.up);
+        this.gameObject.transform.Translate(0.4f * Vector3.up);
 
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
-        rb.AddForce(50 * (Vector2) this.gameObject.transform.parent.parent.transform.up + this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
+        rb.AddForce(7 * (Vector2) this.gameObject.transform.parent.parent.transform.up + 0.5f * this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
 
         BoxCollider2D bc = this.gameObject.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(this.gameObject.transform.parent.parent.GetComponent<BoxCollider2D>(), bc);
@@ -29,13 +29,14 @@ public class LaserScript : MonoBehaviour {
         this.gameObject.GetComponent<BoxCollider2D>().size += new Vector2(Time.deltaTime / 8, 0);
     }
 
-        void OnCollisionEnter2D(Collision2D col) {
+    void OnCollisionEnter2D(Collision2D col) {
         PlayExplosion();
         Destroy(this.gameObject);
     }
 
     void PlayExplosion() {
-        GameObject explosion = Instantiate(RocketExplosionGO);
-        explosion.transform.position = this.transform.position;
+        GameObject explosion = Instantiate(LaserExplosionGO);
+        explosion.transform.position = this.gameObject.transform.position;
+        explosion.transform.rotation = this.gameObject.transform.rotation;
     }
 }

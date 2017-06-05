@@ -16,7 +16,7 @@ public class RocketScript : MonoBehaviour {
 	void Start () {
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
         rb.AddForce(40 * this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
-        this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().AddForce((-200 * new Vector2(this.gameObject.transform.parent.up.x, this.gameObject.transform.parent.up.y) * Mathf.Max(this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity.magnitude / 10, 1)));
+        this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().AddForce((-50 * new Vector2(this.gameObject.transform.parent.up.x, this.gameObject.transform.parent.up.y) * Mathf.Min(Mathf.Max(this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity.magnitude, 1), 1)));
 
         BoxCollider2D bc = this.gameObject.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(this.gameObject.transform.parent.parent.GetComponent<BoxCollider2D>(), bc);
@@ -24,7 +24,7 @@ public class RocketScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        this.GetComponent<Rigidbody2D>().AddForce(20 * transform.up);
+        this.GetComponent<Rigidbody2D>().AddForce(2 * transform.up);
     }
 
     void OnCollisionEnter2D(Collision2D col) {

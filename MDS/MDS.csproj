@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\Ammo\LaserScript.cs" />
     <Compile Include="Assets\Scripts\Ammo\RocketScript.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
-    <Compile Include="Assets\Scripts\CameraFollowCar.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraFollowCarWithinBoundsScript.cs" />
     <Compile Include="Assets\Scripts\Car2DControllerScript.cs" />
     <Compile Include="Assets\Scripts\Explosions\Destroyer.cs" />
     <Compile Include="Assets\Scripts\Weapons\GunShootScript.cs" />

@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542527ab8121f094daa0ac360a014cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketExplosionGO: {fileID: 1489183394914076, guid: f9d2dbd581ad4fd4fa6c6440e88da871,
+  LaserExplosionGO: {fileID: 1292679212159644, guid: eac07a5c77666af469ceb3880f4cffa8,
     type: 2}
 --- !u!212 &212040281971231680
 SpriteRenderer:
