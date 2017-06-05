@@ -16,7 +16,7 @@ public class RocketScript : MonoBehaviour {
 	void Start () {
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
         rb.AddForce(40 * this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity);
-        this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().AddForce((-200 * new Vector2(this.gameObject.transform.parent.up.x, this.gameObject.transform.parent.up.y)));
+        this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().AddForce((-200 * new Vector2(this.gameObject.transform.parent.up.x, this.gameObject.transform.parent.up.y) * Mathf.Max(this.gameObject.transform.parent.parent.GetComponent<Rigidbody2D>().velocity.magnitude / 10, 1)));
 
         BoxCollider2D bc = this.gameObject.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(this.gameObject.transform.parent.parent.GetComponent<BoxCollider2D>(), bc);
@@ -34,7 +34,6 @@ public class RocketScript : MonoBehaviour {
 
     void PlayExplosion()
     {
-        Debug.Log(this.gameObject.transform);
         GameObject explosion = Instantiate(RocketExplosionGO);
         explosion.transform.position = this.transform.position;
     }

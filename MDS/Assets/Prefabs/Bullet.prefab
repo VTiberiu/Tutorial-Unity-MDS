@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212547401437802862}
   - component: {fileID: 50005270550947170}
   - component: {fileID: 61933778549563314}
-  - component: {fileID: 114724844112733288}
+  - component: {fileID: 114321288977175344}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1314490528785010}
   m_LocalRotation: {x: 0, y: 0, z: -0.00032573167, w: 0.99999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.02
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -77,7 +77,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 3, y: 7}
---- !u!114 &114724844112733288
+--- !u!114 &114321288977175344
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1314490528785010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a7219684f512c4fbaab73a382af30c, type: 3}
+  m_Script: {fileID: 11500000, guid: 17feaf11a68a7554592b5f66ff2274a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RocketExplosionGO: {fileID: 1489183394914076, guid: f9d2dbd581ad4fd4fa6c6440e88da871,

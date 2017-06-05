@@ -12,7 +12,7 @@ public class Destroyer : MonoBehaviour {
 
 	void DestroyGameObject()
     {
-        Debug.Log("A fost apelat Destroyer");
+        //Debug.Log("A fost apelat Destroyer");
         Destroy(gameObject);
     }
 
