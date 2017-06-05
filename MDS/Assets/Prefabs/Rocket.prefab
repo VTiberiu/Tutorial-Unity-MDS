@@ -88,6 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a7219684f512c4fbaab73a382af30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  sourceWeapon: {fileID: 0}
+>>>>>>> 3d60049c1c61dde0bd70b4ababb5c8cacfd483f0
   RocketExplosionGO: {fileID: 1489183394914076, guid: f9d2dbd581ad4fd4fa6c6440e88da871,
     type: 2}
 --- !u!212 &212510561183777528
