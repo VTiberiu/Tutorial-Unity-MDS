@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDS", "MDS.csproj", "{63DB174C-1E21-54FF-2231-392DF5CBEB14}"
 EndProject
 Global

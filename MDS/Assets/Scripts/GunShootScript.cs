@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class GunShootScript : MonoBehaviour {
 
-    public Sprite sprite;
+    public GameObject ammo;
 
     void Start () {
 	}
 
     void Update() {
         if (Input.GetButtonDown("Fire")) {
-            GameObject ammo = new GameObject("Rocket");
-            RocketScript rs = ammo.AddComponent<RocketScript>();
-            rs.sourceWeapon = this.gameObject.transform;
-            rs.sprite = sprite;
+            ammo.GetComponent<RocketScript>().sourceWeapon = this.transform;
+            Instantiate(ammo);
         }
     }
 
