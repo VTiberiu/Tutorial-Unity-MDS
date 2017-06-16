@@ -37,7 +37,6 @@ public class ControllerScript : MonoBehaviour {
         }
         GameObject playerCar = GameObject.Instantiate(playerCarPrefab);
 
-        GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowCarWithinBoundsScript>().target = playerCar.transform;
         GameObject.FindWithTag("HealthBar").GetComponent<HudScript>().target = playerCar.transform;
     }
 }
