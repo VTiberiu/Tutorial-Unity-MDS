@@ -80,8 +80,12 @@
     <Compile Include="Assets\Scripts\Ammo\RocketScript.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollowCarWithinBoundsScript.cs" />
-    <Compile Include="Assets\Scripts\Car2DControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Controller\ControllerScript.cs" />
     <Compile Include="Assets\Scripts\Explosions\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\Player\Car2DControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Stats.cs" />
+    <Compile Include="Assets\Scripts\Player\StatsObserver.cs" />
+    <Compile Include="Assets\Scripts\View\HudScript.cs" />
     <Compile Include="Assets\Scripts\Weapons\GunShootScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,6 +30,11 @@ public class LaserScript : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "Player") {
+            Debug.Log("Ai tras in masina " + col.gameObject);
+            col.gameObject.GetComponent<Stats>().currentHealth--;
+            Debug.Log(col.gameObject.GetComponent<Stats>().currentHealth);
+        }
         PlayExplosion();
         Destroy(this.gameObject);
     }
