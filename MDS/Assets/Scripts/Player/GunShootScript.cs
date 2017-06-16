@@ -9,10 +9,8 @@ public class GunShootScript : MonoBehaviour {
     void Start () {
 	}
 
-    void Update() {
-        if (Input.GetButtonDown("Fire")) {
-            Instantiate(ammo, this.gameObject.transform, false);
-        }
+    public void Shoot() {
+        Instantiate(ammo, this.gameObject.transform, false);
     }
 
 }

@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 212204801044206026}
   - component: {fileID: 50410389612440438}
   - component: {fileID: 61579191382008296}
-  - component: {fileID: 114904129515993994}
   - component: {fileID: 114914967689277546}
   - component: {fileID: 114975883984340382}
   m_Layer: 0
@@ -122,19 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 1415270217197700, guid: 30e9e8b7d6e8da3478d429acd0ef7b62, type: 2}
---- !u!114 &114904129515993994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928230205675642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eaee7b414a0c024493b4019abb5288b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedForce: 3
-  torqueForce: 0.4
 --- !u!114 &114914967689277546
 MonoBehaviour:
   m_ObjectHideFlags: 1

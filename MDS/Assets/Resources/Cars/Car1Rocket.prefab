@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 212037417526710024}
   - component: {fileID: 50316164115663378}
   - component: {fileID: 61336162929389852}
-  - component: {fileID: 114998645050193518}
   - component: {fileID: 114913930956051660}
   - component: {fileID: 114027921857077560}
   m_Layer: 0
@@ -148,19 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
---- !u!114 &114998645050193518
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231748352256034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eaee7b414a0c024493b4019abb5288b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedForce: 4
-  torqueForce: 0.5
 --- !u!212 &212037417526710024
 SpriteRenderer:
   m_ObjectHideFlags: 1

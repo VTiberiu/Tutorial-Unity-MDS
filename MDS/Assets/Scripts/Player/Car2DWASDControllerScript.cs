@@ -30,7 +30,7 @@ public class Car2DWASDControllerScript : MonoBehaviour {
         turnFactor = Math.Sign(Vector3.Dot(carRigidBody.velocity.normalized, carRigidBody.transform.up)) * Math.Abs(turnFactor);
 
         //înainte + înapoi
-        carRigidBody.AddForce(Input.GetAxis("Throttle") * speedForce * transform.up);
+        carRigidBody.AddForce(Input.GetAxis("ThrottleP2") * speedForce * transform.up);
         //aplică forță pozitivă pe direcția pe care o înfruntă mașina
 
         //reducerea vitezei în caz de drift
@@ -39,12 +39,18 @@ public class Car2DWASDControllerScript : MonoBehaviour {
         cu cât e driftFactoru mai mare, cu atât forța e mai mare*/
 
         //stânga + dreapta
-        carRigidBody.AddTorque(-turnFactor * Input.GetAxis("Steering") * torqueForce);
+        carRigidBody.AddTorque(-turnFactor * Input.GetAxis("SteeringP2") * torqueForce);
 
         //oprirea rotației când mașina stă pe loc
         carRigidBody.angularVelocity = carRigidBody.velocity.magnitude < 0.05 ? 0 : carRigidBody.angularVelocity;
         //când viteza mașinii scade sub o constantă oarecare (se alege să fie cât mai realist) viteza unghiulară e setată la 0
 
         //Debug.Log(carRigidBody.velocity.magnitude);   
+    }
+
+    void Update() {
+        if (Input.GetButtonDown("FireP1")) {
+            this.gameObject.transform.GetChild(0).GetComponent<GunShootScript>().Shoot();
+        }
     }
 }

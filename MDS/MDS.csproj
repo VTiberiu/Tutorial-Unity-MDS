@@ -83,8 +83,7 @@
     <Compile Include="Assets\Scripts\Explosions\Destroyer.cs" />
     <Compile Include="Assets\Scripts\Player\Car2DArrowControllerScript.cs" />
     <Compile Include="Assets\Scripts\Player\Car2DWASDControllerScript.cs" />
-    <Compile Include="Assets\Scripts\Player\RCtrlGunShootScript.cs" />
-    <Compile Include="Assets\Scripts\Player\SpacebarGunShootScript.cs" />
+    <Compile Include="Assets\Scripts\Player\GunShootScript.cs" />
     <Compile Include="Assets\Scripts\Player\Stats.cs" />
     <Compile Include="Assets\Scripts\Player\StatsObserver.cs" />
     <Compile Include="Assets\Scripts\View\HudScript.cs" />
