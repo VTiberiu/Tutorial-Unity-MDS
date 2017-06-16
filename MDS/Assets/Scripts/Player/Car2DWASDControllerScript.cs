@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car2DControllerScript : MonoBehaviour {
+public class Car2DWASDControllerScript : MonoBehaviour {
 
     public float speedForce;
     public float torqueForce;
@@ -25,7 +25,7 @@ public class Car2DControllerScript : MonoBehaviour {
         driftFactor*/
 
         //0 - mașina stă pe loc, 1 - virajul are randament maxim
-        float turnFactor = (float) Math.Pow(Math.Min(carRigidBody.velocity.magnitude / torqueForce, 1), 2);
+        float turnFactor = (float)Math.Pow(Math.Min(carRigidBody.velocity.magnitude / torqueForce, 1), 2);
         //inversează direcția virajului când dă cu spatele
         turnFactor = Math.Sign(Vector3.Dot(carRigidBody.velocity.normalized, carRigidBody.transform.up)) * Math.Abs(turnFactor);
 
@@ -40,17 +40,11 @@ public class Car2DControllerScript : MonoBehaviour {
 
         //stânga + dreapta
         carRigidBody.AddTorque(-turnFactor * Input.GetAxis("Steering") * torqueForce);
-        
+
         //oprirea rotației când mașina stă pe loc
         carRigidBody.angularVelocity = carRigidBody.velocity.magnitude < 0.05 ? 0 : carRigidBody.angularVelocity;
         //când viteza mașinii scade sub o constantă oarecare (se alege să fie cât mai realist) viteza unghiulară e setată la 0
 
         //Debug.Log(carRigidBody.velocity.magnitude);   
-
-        MoveCamera();
-    }
-
-    public void MoveCamera() {
-        Camera.main.gameObject.transform.position = new Vector3(Mathf.Max(Mathf.Min(this.gameObject.transform.position.x, 5), -5), Mathf.Max(Mathf.Min(this.gameObject.transform.position.y, 10), -10), -10);
     }
 }

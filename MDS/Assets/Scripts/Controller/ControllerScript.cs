@@ -35,8 +35,16 @@ public class ControllerScript : MonoBehaviour {
             else if (weapon == "Rocket Launcher")
                 playerCarPrefab = (GameObject)Resources.Load("Cars/Car3Rocket", typeof(GameObject));
         }
-        GameObject playerCar = GameObject.Instantiate(playerCarPrefab);
+        GameObject arrowPlayerCar = Instantiate(playerCarPrefab);
+        Car2DArrowControllerScript arrowCtrl = arrowPlayerCar.AddComponent<Car2DArrowControllerScript>();
+        arrowCtrl.torqueForce = 0.4f;
+        arrowCtrl.speedForce = 4f;
 
-        GameObject.FindWithTag("HealthBar").GetComponent<HudScript>().target = playerCar.transform;
+        GameObject WASDPlayerCar = Instantiate(playerCarPrefab, new Vector3(0, 2), Quaternion.identity);
+        Car2DWASDControllerScript WASDCtrl = WASDPlayerCar.AddComponent<Car2DWASDControllerScript>();
+        WASDCtrl.torqueForce = 0.4f;
+        WASDCtrl.speedForce = 4f;
+
+        GameObject.FindWithTag("HealthBar").GetComponent<HudScript>().target = arrowPlayerCar.transform;
     }
 }

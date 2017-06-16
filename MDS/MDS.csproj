@@ -81,11 +81,13 @@
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Controller\ControllerScript.cs" />
     <Compile Include="Assets\Scripts\Explosions\Destroyer.cs" />
-    <Compile Include="Assets\Scripts\Player\Car2DControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Car2DArrowControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Car2DWASDControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\RCtrlGunShootScript.cs" />
+    <Compile Include="Assets\Scripts\Player\SpacebarGunShootScript.cs" />
     <Compile Include="Assets\Scripts\Player\Stats.cs" />
     <Compile Include="Assets\Scripts\Player\StatsObserver.cs" />
     <Compile Include="Assets\Scripts\View\HudScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\GunShootScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
