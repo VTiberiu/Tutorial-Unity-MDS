@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 542527ab8121f094daa0ac360a014cca
+timeCreated: 1496699168
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - LaserExplosionGO: {fileID: 1292679212159644, guid: eac07a5c77666af469ceb3880f4cffa8,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
