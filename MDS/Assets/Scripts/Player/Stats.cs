@@ -5,6 +5,8 @@ using UnityEngine;
 public class Stats : MonoBehaviour {
 
     public int maxHealth;
+    public float speedForce;
+    public float torqueForce;
     [HideInInspector]
     public int currentHealth;
 

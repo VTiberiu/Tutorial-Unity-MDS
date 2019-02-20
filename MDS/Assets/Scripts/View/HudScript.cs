@@ -10,7 +10,7 @@ public class HudScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        healthbarTransform = this.gameObject.transform.FindChild("Mask").FindChild("SubMask").gameObject.GetComponent<RectTransform>();
+        healthbarTransform = this.gameObject.transform.Find("Mask").Find("SubMask").gameObject.GetComponent<RectTransform>();
         maxHealthbarWidth = healthbarTransform.sizeDelta.x;    
     }
 	
@@ -18,6 +18,6 @@ public class HudScript : MonoBehaviour {
 	void Update () {
         int maxHealth = target.GetComponent<Stats>().maxHealth;
         int currentHealth = target.GetComponent<Stats>().currentHealth;
-        healthbarTransform.sizeDelta = new Vector2(maxHealthbarWidth*((float)currentHealth /maxHealth), healthbarTransform.sizeDelta.y);
+        healthbarTransform.sizeDelta = new Vector2(maxHealthbarWidth*((float)currentHealth/maxHealth), healthbarTransform.sizeDelta.y);
     }   
 }
