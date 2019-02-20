@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c35e93131631d4899b2c958ad03fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 20
+  speedForce: 3
+  torqueForce: 0.4
   currentHealth: 0
 --- !u!114 &114767516633685740
 MonoBehaviour:

@@ -37,8 +37,8 @@ public class ControllerScript : MonoBehaviour {
         }
         GameObject arrowPlayerCar = Instantiate(playerCarPrefab, new Vector3(0, -6), Quaternion.identity);
         Car2DArrowControllerScript arrowCtrl = arrowPlayerCar.AddComponent<Car2DArrowControllerScript>();
-        arrowCtrl.torqueForce = 0.4f;
-        arrowCtrl.speedForce = 4f;
+        arrowCtrl.torqueForce = arrowPlayerCar.GetComponent<Stats>().torqueForce;
+        arrowCtrl.speedForce = arrowPlayerCar.GetComponent<Stats>().speedForce;
 
         car = PlayerPrefs.GetString("carP2");
         weapon = PlayerPrefs.GetString("weaponP2");
@@ -72,8 +72,8 @@ public class ControllerScript : MonoBehaviour {
         }
         GameObject WASDPlayerCar = Instantiate(playerCarPrefab, new Vector3(0, 6), Quaternion.AngleAxis(180, new Vector3(0,0,1)));
         Car2DWASDControllerScript WASDCtrl = WASDPlayerCar.AddComponent<Car2DWASDControllerScript>();
-        WASDCtrl.torqueForce = 0.4f;
-        WASDCtrl.speedForce = 4f;
+        WASDCtrl.torqueForce = WASDPlayerCar.GetComponent<Stats>().torqueForce;
+        WASDCtrl.speedForce = WASDPlayerCar.GetComponent<Stats>().speedForce;
 
         //GameObject.FindWithTag("MainCamera").GetComponent<CameraFollowCarWithinBoundsScript>().target = arrowPlayerCar.transform;
         GameObject.Find("HealthBarP1").GetComponent<HudScript>().target = WASDPlayerCar.transform;

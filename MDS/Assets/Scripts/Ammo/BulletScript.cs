@@ -9,6 +9,7 @@ using UnityEngine;
  */
 public class BulletScript : MonoBehaviour {
 
+    public int damage;
     public GameObject RocketExplosionGO;
     private enum Turret {
         LEFT, RIGHT
@@ -42,7 +43,7 @@ public class BulletScript : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == "Player") {
             Debug.Log("Ai tras in masina " + col.gameObject);
-            col.gameObject.GetComponent<Stats>().currentHealth--;
+            col.gameObject.GetComponent<Stats>().currentHealth -= damage;
             Debug.Log(col.gameObject.GetComponent<Stats>().currentHealth);
         }
         PlayExplosion();
