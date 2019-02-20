@@ -10,6 +10,7 @@ using UnityEngine;
  */
 public class LaserScript : MonoBehaviour {
 
+    public int damage;
     public GameObject LaserExplosionGO;
 
     // Use this for initialization
@@ -32,7 +33,7 @@ public class LaserScript : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == "Player") {
             Debug.Log("Ai tras in masina " + col.gameObject);
-            col.gameObject.GetComponent<Stats>().currentHealth--;
+            col.gameObject.GetComponent<Stats>().currentHealth -= damage;
             Debug.Log(col.gameObject.GetComponent<Stats>().currentHealth);
         }
         PlayExplosion();
